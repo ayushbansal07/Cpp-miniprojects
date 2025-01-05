@@ -4,25 +4,25 @@
 
 namespace abansal::ctlist {
 
-template <Operator Op, typename... TNodes>
+template <Operator Op, typename... TObjs>
 class BooleanList {
 public:
   void init() {
-    m_node.init();
+    m_obj.init();
   }
 
   bool check() {
-    return m_node.check();
+    return m_obj.check();
   }
 
 private:
-  typename BooleanNodeTypeSelector<Op, TNodes...>::type m_node;
+  typename BooleanNodeTypeSelector<Op, TObjs...>::type m_obj;
 };
 
-template <typename... TNodes>
-using AndList = BooleanList<Operator::AND, TNodes...>;
+template <typename... TObjs>
+using AndList = BooleanList<Operator::AND, TObjs...>;
 
-template <typename... TNodes>
-using OrList = BooleanList<Operator::OR, TNodes...>;
+template <typename... TObjs>
+using OrList = BooleanList<Operator::OR, TObjs...>;
   
 } // namespace abansal::ctlist

@@ -4,50 +4,50 @@
 
 namespace abansal::ctlist {
 
-class TestNode1 {
+class TestObj1 {
 public:
   void init() {
-    std::cerr << "TestNode1 init" << std::endl;
+    std::cerr << "TestObj1 init" << std::endl;
   }
 
   bool check() {
-    std::cerr << "TestNode1 check" << std::endl;
+    std::cerr << "TestObj1 check" << std::endl;
     return true;
   }
 };
 
-class TestNode2 {
+class TestObj2 {
 public:
   void init() {
-    std::cerr << "TestNode2 init" << std::endl;
+    std::cerr << "TestObj2 init" << std::endl;
   }
 
   bool check() {
-    std::cerr << "TestNode2 check" << std::endl;
+    std::cerr << "TestObj2 check" << std::endl;
     return true;
   }
 };
 
-class TestNode3 {
+class TestObj3 {
 public:
   void init() {
-    std::cerr << "TestNode3 init" << std::endl;
+    std::cerr << "TestObj3 init" << std::endl;
   }
 
   bool check() {
-    std::cerr << "TestNode3 check" << std::endl;
+    std::cerr << "TestObj3 check" << std::endl;
     return false;
   }
 };
 
-class TestNode4 {
+class TestObj4 {
 public:
   void init() {
-    std::cerr << "TestNode4 init" << std::endl;
+    std::cerr << "TestObj4 init" << std::endl;
   }
 
   bool check() {
-    std::cerr << "TestNode4 check" << std::endl;
+    std::cerr << "TestObj4 check" << std::endl;
     return true;
   }
 };

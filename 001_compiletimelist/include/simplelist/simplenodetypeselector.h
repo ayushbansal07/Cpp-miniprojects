@@ -2,7 +2,7 @@
 
 namespace abansal::ctlist {
 
-template <typename... TNodes>
+template <typename... TObjs>
 struct SimpleNodeTypeSelector;
   
 } // namespace abansal::ctlist

@@ -2,36 +2,36 @@
 
 namespace abansal::ctlist {
 
-template <typename TNode, typename TNext>
+template <typename TObj, typename TNextNode>
 class SimpleListNode {
 public:
   void init() {
-    m_node.init();
+    m_obj.init();
     m_next.init();
   }
 
   bool check() {
-    return m_node.check() && m_next.check();
+    return m_obj.check() && m_next.check();
   }
 
 protected:
-  TNode m_node;
-  TNext m_next;
+  TObj m_obj;
+  TNextNode m_next;
 };
 
-template <typename TNode>
+template <typename TObj>
 class SimpleListNodeTerminal {
 public:
   void init() {
-    m_node.init();
+    m_obj.init();
   }
 
   bool check() {
-    return m_node.check();
+    return m_obj.check();
   }
 
 protected:
-  TNode m_node;
+  TObj m_obj;
 };
 
 } // namespace abansal::ctlist

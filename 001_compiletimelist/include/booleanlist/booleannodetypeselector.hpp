@@ -5,14 +5,14 @@
 
 namespace abansal::ctlist {
 
-template <Operator Op, typename TNode>
-struct BooleanNodeTypeSelector<Op, TNode> {
-  using type = BooleanListNodeTerminal<TNode>;
+template <Operator Op, typename TObj>
+struct BooleanNodeTypeSelector<Op, TObj> {
+  using type = BooleanListNodeTerminal<TObj>;
 };
 
-template <Operator Op, typename TNode, typename... TNodeList>
-struct BooleanNodeTypeSelector<Op, TNode, TNodeList...> {
-  using type = BooleanListNode<Op, TNode, typename BooleanNodeTypeSelector<Op, TNodeList...>::type>;
+template <Operator Op, typename TObj, typename... TObjList>
+struct BooleanNodeTypeSelector<Op, TObj, TObjList...> {
+  using type = BooleanListNode<Op, TObj, typename BooleanNodeTypeSelector<Op, TObjList...>::type>;
 };
   
 } // namespace abansal::ctlist

@@ -4,7 +4,7 @@
 
 namespace abansal::ctlist {
 
-template <Operator Op, typename... TNodes>
+template <Operator Op, typename... TObjs>
 struct BooleanNodeTypeSelector;
   
 } // namespace abansal::ctlist

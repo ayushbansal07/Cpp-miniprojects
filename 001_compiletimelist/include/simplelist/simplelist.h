@@ -4,7 +4,7 @@
 
 namespace abansal::ctlist {
 
-template <typename... TNodes>
+template <typename... TObjs>
 class SimpleList {
 public:
   void init() {
@@ -16,7 +16,7 @@ public:
   }
 
 protected:
-  typename SimpleNodeTypeSelector<TNodes...>::type m_node;
+  typename SimpleNodeTypeSelector<TObjs...>::type m_node;
 };
   
 } // namespace abansal::ctlist

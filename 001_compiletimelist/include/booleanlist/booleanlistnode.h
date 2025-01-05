@@ -4,52 +4,52 @@
 
 namespace abansal::ctlist {
 
-template <Operator Op, typename TNode, typename TNext>
+template <Operator Op, typename TObj, typename TNextNode>
 class BooleanListNodeBase {
 public:
   void init() {
-    m_node.init();
+    m_obj.init();
     m_next.init();
   }
   bool check();
 
 protected:
-  TNode m_node;
-  TNext m_next;
+  TObj m_obj;
+  TNextNode m_next;
 };
 
-template <Operator Op, typename TNode, typename TNext>
+template <Operator Op, typename TObj, typename TNextNode>
 class BooleanListNode;
 
-template <typename TNode, typename TNext>
-class BooleanListNode<Operator::AND, TNode, TNext> : public BooleanListNodeBase<Operator::AND, TNode, TNext> {
+template <typename TObj, typename TNextNode>
+class BooleanListNode<Operator::AND, TObj, TNextNode> : public BooleanListNodeBase<Operator::AND, TObj, TNextNode> {
 public:
   bool check() {
-    return this->m_node.check() && this->m_next.check();
+    return this->m_obj.check() && this->m_next.check();
   }
 };
 
-template <typename TNode, typename TNext>
-class BooleanListNode<Operator::OR, TNode, TNext> : public BooleanListNodeBase<Operator::OR, TNode, TNext> {
+template <typename TObj, typename TNextNode>
+class BooleanListNode<Operator::OR, TObj, TNextNode> : public BooleanListNodeBase<Operator::OR, TObj, TNextNode> {
 public:
   bool check() {
-    return this->m_node.check() || this->m_next.check();
+    return this->m_obj.check() || this->m_next.check();
   }
 };
 
-template <typename TNode>
+template <typename TObj>
 class BooleanListNodeTerminal {
 public:
   void init() {
-    m_node.init();
+    m_obj.init();
   }
 
   bool check() {
-    return m_node.check();
+    return m_obj.check();
   }
 
 private:
-  TNode m_node;
+  TObj m_obj;
 };
   
 } // namespace abansal::ctlist

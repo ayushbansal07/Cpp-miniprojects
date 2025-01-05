@@ -14,13 +14,13 @@ void initAndCheck(T& list, int testId) {
 }
 
 int main() {
-  using MyAndList = AndList<TestNode1, TestNode2, TestNode3, TestNode4>;
+  using MyAndList = AndList<TestObj1, TestObj2, TestObj3, TestObj4>;
   MyAndList list1;
-  initAndCheck(list1, 1); // Should return 0 as TestNode3 returns false, also TestNode4 check should not be called
+  initAndCheck(list1, 1); // Should return 0 as TestObj3 returns false, also TestObj4 check should not be called
 
-  using MyOrList = OrList<TestNode1, TestNode2, TestNode3, TestNode4>;
+  using MyOrList = OrList<TestObj1, TestObj2, TestObj3, TestObj4>;
   MyOrList list2;
-  initAndCheck(list2, 2); // Should return 1 as TestNode1 return true, but only TestNode1 should be called
+  initAndCheck(list2, 2); // Should return 1 as TestObj1 return true, but only TestObj1 should be called
 
   // We can use conjunction of AndList and OrList
   AndList<MyAndList, MyOrList> list3;

@@ -5,14 +5,14 @@
 
 namespace abansal::ctlist {
 
-template <typename TNode>
-struct SimpleNodeTypeSelector<TNode> {
-  using type = SimpleListNodeTerminal<TNode>;
+template <typename TObj>
+struct SimpleNodeTypeSelector<TObj> {
+  using type = SimpleListNodeTerminal<TObj>;
 };
 
-template <typename TNode, typename... TNodeList>
-struct SimpleNodeTypeSelector<TNode, TNodeList...> {
-  using type = SimpleListNode<TNode, typename SimpleNodeTypeSelector<TNodeList...>::type>;
+template <typename TObj, typename... TObjList>
+struct SimpleNodeTypeSelector<TObj, TObjList...> {
+  using type = SimpleListNode<TObj, typename SimpleNodeTypeSelector<TObjList...>::type>;
 };
   
 } // namespace abansal::ctlist
