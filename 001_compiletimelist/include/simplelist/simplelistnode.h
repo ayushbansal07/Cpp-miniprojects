@@ -11,10 +11,7 @@ public:
   }
 
   bool check() {
-    if (!m_node.check()) {
-      return false;
-    }
-    return m_next.check();
+    return m_node.check() && m_next.check();
   }
 
 protected:
